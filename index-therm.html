@@ -29,17 +29,34 @@
         chart.draw(data, options);
 
         data.setValue(1, 1, 85);
-        chart.draw(data, options);        
+        chart.draw(data, options);
+
+        var porc = 100;
+
+        setTimeout(function() {
+          runTherm();
+        }, 3000);
+
+        function runTherm(){
+          porc--;
+          data.setValue(0, 1, porc);
+          chart.draw(data, options);          
+          if(porc > 0){
+            setTimeout(runTherm, 1000);
+          }
+        }      
+
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 1000);
 
         /*
         setInterval(function() {
           data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
           chart.draw(data, options);
         }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
+
         setInterval(function() {
           data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
           chart.draw(data, options);
