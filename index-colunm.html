@@ -6,12 +6,12 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ["Element", "Density", { role: "style" } ],
-        ["Vencidas", 33, "#b87333"],
+        ["Element", "Total", { role: "style" } ],
+        ["Vencidas", 33, "#ff6666"],
         ["Nesta semana", 33, "silver"],
-        ["Ontem", 6, "gold"],
-        ["Hoje", 13, "color: #e5e4e2"],
-        ["Amanhã", 4, "color: #e5e4e2"]
+        ["Ontem", 6, "#ffbd55"],
+        ["Hoje", 13, "color: #ffff66"],
+        ["Amanhã", 4, "color: #9de24f"]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -25,7 +25,7 @@
       var options = {
         title: "Notificações vencendo (Protesto)",
         width: 600,
-        height: 400,
+        height: 200,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
@@ -35,6 +35,6 @@
     </script>
   </head>
   <body>
-    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+    <div id="columnchart_values" style="height: 200px;"></div>
   </body>
 </html>
